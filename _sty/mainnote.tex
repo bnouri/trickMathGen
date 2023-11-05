@@ -1,0 +1,49 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[12pt,oneside]{article}
+\usepackage{!sty/IEEEtrantools}
+\usepackage{!sty/SBNart}
+\usepackage{!sty/SBNsh}
+\usepackage{!sty/SBNext}
+
+%-------------------------------------------------------------------------------
+% Header / Footer:
+%-------------------------------------------------------------------------------
+% Header for pp.2 (and after):
+\newcommand{\HdrL}{ \normalfont \textsc{Behzad} } %(1) For-note:i.e. needed
+\newcommand{\HdrC}{ \normalfont \LaTeX~~Math~~Env.}
+
+% Title (\htitle)
+\newcommand{\TopL}{}
+\newcommand{\TopR}{}
+\newcommand{\midl}{}
+\newcommand{\BotR}{}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\begin{document}
+\isCUtitlefalse            %(2) For-note: make this \isCUtitlefalse
+%\htitle{}{}               %(3) For-note: Comment This out
+%\input{!opt/ttoc1}
+%\tableofcontents
+%\toc                      %(4) If no need to ToC, comment This out
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+% Simple Title for Sort/Technical Note:
+%-------------------------------------------------------------------------------
+%(5) for-note: Bring the  follwoing part in (No \rem{} or Comment-out}
+\begin{tcolorbox}
+{ \mbox{}
+	\begin{singlespace}
+	\centering
+	\textbf{\large Equations in \LaTeX }\\[6pt]
+	\textbf{Dr.~Behzad~Nouri}\\[4pt]
+	Date:~\today
+	\end{singlespace}
+} %rem
+\end{tcolorbox}
+\tableofcontents   %(4) If no need to ToC, comment This out
+%-------------------------------------------------------------------------------
+
+%---- End -------

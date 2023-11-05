@@ -1,0 +1,99 @@
+%-------------------------------------------------------------------------------
+% Short-Hand Writings:
+%-------------------------------------------------------------------------------
+\newcommand{\rem}[1]{}
+
+%% $Bold$:
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\bs}[1]{\mbox{$\boldsymbol{#1}$}}
+
+%% $Formatted$:
+\newcommand{\op}[1]{\operatorname{#1}} 
+\newcommand{\mathat}[1]{\mathbf{\hat{#1}}}
+
+%% Special-Symbols:
+\newcommand{\textsub}[1]{$_{\hbox{\footnotesize{#1}}}$}
+\newcommand{\textsup}[1]{$^{\hbox{\footnotesize{#1}}}$}
+\newcommand{\reg}[1]{\mbox{#1\textsuperscript{\textregistered}}}
+
+%---------------------------------------
+% (), {}, [], <>, |.|, ||.||
+%---------------------------------------
+%% $Brackets$, $parenthesis$, $etc$:
+\newcommand{\brk}[1]{\left(#1\right)}          %(.)
+\newcommand{\set}[1]{\left\{#1\right\}}        %{.}
+\newcommand{\mm}[1]{\left[#1\right]}           %[.]
+\newcommand{\seq}[1]{\left<#1\right>}          %<.>
+\newcommand{\abs}[1]{\lvert#1\rvert}           %|.|
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert} %||.||
+
+%% $Symbols$:
+\newcommand{\crv}[1]{\overset{\lower3pt\hbox{$\smash{\scriptscriptstyle\boldsymbol{\frown}}$}}{#1}} 
+\newcommand{\p}{^\prime}  %For thefirst derivative
+\newcommand{\EPS}{\boldsymbol{\mathlarger{{\varepsilon}}}}
+\newcommand{\PHI}{\mathbf{\Phi}}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\defeq}{\buildrel def \over =}
+\newcommand{\trieq}{\buildrel \Delta \over =}
+\newcommand{\btrieq}{\buildrel \bigtriangleup \over =}
+
+%% $Sets$  
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\LHS}{\mathbb{C}^{-}}  %The open left half plane in the complex s-plane
+\newcommand{\RHS}{\mathbb{C}^{+}}  %The open right half plane in the complex s-plane
+
+%% $Size$
+\newcommand{\mli}[1]{\mathlarger{#1}}
+\newcommand{\mlii}[1]{\mathlarger{\mathlarger{#1}}}
+\newcommand{\mliii}[1]{\mathlarger{\mathlarger{\mathlarger{#1}}}}
+
+%% $Dot$
+\newcommand{\mdot}[1]{\mathbf{\dot{#1}}}
+
+%% $Matrix transpose$
+\newcommand{\T}{^\mathrm{\mli{t}}}
+%---------------------------------------
+%% Freuently Used:
+%---------------------------------------
+\newcommand{\Sec}[1]{\mbox{Sec.~\ref{#1}}}
+\newcommand{\Ch}[1]{\mbox{Chap.~\ref{#1}}}
+\newcommand{\App}[1]{\mbox{Appendix~\ref{#1}}}
+\newcommand{\Fig}[1]{\mbox{Fig.~\ref{#1}}}
+\newcommand{\Figs}[1]{\mbox{Figures~\ref{#1}}}
+\newcommand{\Tab}[1]{\mbox{Table~\ref{#1}}}
+\newcommand{\Tabs}[1]{\mbox{Tables~\ref{#1}}}
+\newcommand{\Eq}[1]{\mbox{Eq.~\eqref{#1}}}
+\newcommand{\Ref}[1]{\mbox{Reference~\cite{#1}}} %Only if sentense starts with a [ref].
+
+\newcommand{\Thm}[1]{\mbox{Theorem~\ref{#1}}}
+\newcommand{\Lem}[1]{\mbox{Lemma~\ref{#1}}}
+\newcommand{\Cor}[1]{\mbox{Corollary~\ref{#1}}}
+\newcommand{\Algo}[1]{\mbox{Algorithm~\ref{#1}}}
+\newcommand{\Flow}[1]{\mbox{Flowchart~\ref{#1}}}
+
+\newcommand{\ie}{\mbox{i.e.,~}}   %Must always be followed by a comma,'',i.e.,'' 
+\newcommand{\eg}{\mbox{e.g.}}    % It is usually followed by a comma, but there may be exceptions based on context depends on where in sentence it appears.
+
+%---------------------------------------
+%% Colors:
+%---------------------------------------
+\definecolor{Pink}{rgb}{1,0.75,0.8}
+\definecolor{Gray}{rgb}{0.85,0.85,0.85}
+\newcommand{\SBNb}{\color[rgb]{0,0,1}} 
+\newcommand{\SBNg}{\color[rgb]{0,0.58,0}}
+\newcommand{\SBNr}{\color[rgb]{0.65,0.16,0}}  
+%
+%\newcommand{\SBNb}{} 
+%\newcommand{\SBNg}{} 
+%\newcommand{\SBNr}{}
+%
+%
+\endinput   %<-LaTeX will ignore anything after this line.
+%-------------------------------------------------------------------------------
+% END of Short Hand
+%-------------------------------------------------------------------------------
+

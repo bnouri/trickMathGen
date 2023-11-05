@@ -1,0 +1,726 @@
+\newpage
+\newcommand{\TO}{$\quad\to\quad$}
+%------------------------------------------------------------------------
+\section{IEEE Style: \texttt{Mathematics} environment for IEEEtran.cls}
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Some Examples:}}}
+%
+\subsection{In-Line Equations}
+\begin{center} \verb!$\frac{1}{x^2}$! \TO $\frac{1}{x^2}$\par
+This is \verb!$\dfrac{1}{x^2}$! that \TO $\dfrac{1}{x^2}$ 
+\end{center}
+
+ 
+\subsection{Display Equations}
+\begin{center} \verb!$$\frac{dx}{dt}$$! \TO  \end{center}
+$$\frac{1}{x^2}$$
+
+\begin{center} \verb!$$\dfrac{1}{x^2}$$! \TO  \end{center}
+$$\dfrac{1}{x^2}$$
+Alternatively, it is
+\begin{center} \verb!\[\dfrac{1}{x^2}\]! \TO  \end{center}
+\[\dfrac{1}{x^2}\]
+%
+%
+%------------------------------------------------------------------------
+\subsection{Enumerated Equations}
+%------------------------------------------------------------------------
+Equations are created using the traditional equation environment as shown below in \eqref{eq:ieee1} (\verb!\eqref{eq:ieee1}!):
+%
+\begin{verbatim}
+\begin{equation}  \label{eq:ieee1}
+x \:=\: \sum\limits_{i=0}^{z} 2^{i}Q\,.
+\end{equation}
+\end{verbatim}
+%
+which yields
+%
+\begin{equation}  \label{eq:ieee1}
+x\:=\: \sum\limits_{i=0}^{z} 2^{i}Q\,.
+\end{equation}
+%
+%
+%------------------------------------------------------------------------
+\subsection{Non-Enumerated Equations}
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{equation*}  
+\mathbf{H}(s)\:=\:\left(G\:+\:sC \right)^{-1}B
+\end{equation*}
+\end{verbatim}
+%
+i.e. 
+%
+\begin{equation*}  
+	\mathbf{H}(s)\:=\:\left(G\:+\:sC \right)^{-1}B
+\end{equation*}
+%
+%
+%------------------------------------------------------------------------
+\subsection{IEEE: Long Equation in Multi-line Format}
+%------------------------------------------------------------------------
+If an equation is too big to be written in one line We also can split it in two or more lines as shown below. 
+%
+%
+\subsubsection{Alt-1\_Using \texttt{multline} environment:}
+%
+%
+\begin{verbatim}
+\begin{multline} \label{eq:1001}
+	H\:=\:\sum\limits_{j}A+B\:=\: \\
+	\sum\limits_{j}C+D+ \ldots
+\end{multline}
+\end{verbatim}
+%
+%
+\begin{center}
+\begin{minipage}{0,4\textwidth}
+\begin{multline} \label{eq:1001}
+	H\:=\:\sum\limits_{j}A+B\:=\: \\
+	\sum\limits_{j}C+D+ \ldots
+\end{multline}
+\end{minipage}
+\end{center}
+%
+%
+\subsubsection{Alt-2\_Using \texttt{spilt} Environment:}
+This is recommended for the typical IEEE style!
+%
+%
+\begin{verbatim}
+\begin{equation} 
+\begin{split}
+H_c &=  \sum\limits_{l_1+\dots+ l_p=l}\prod\limits^p_{i=1} \binom{n_i}{l _i} \\
+&\quad \times [(n-l )]^n \times \sum\limits^p_{j=1}(n_i)^2
+\end{split}
+\end{equation}
+\end{verbatim}
+%
+i.e.
+%
+\begin{equation} 
+\begin{split}
+H_c &=  \sum\limits_{l_1+\dots+ l_p=l}\prod\limits^p_{i=1} \binom{n_i}{l _i} \\
+&\quad \times [(n-l )]^n \times \sum\limits^p_{j=1}(n_i)^2
+\end{split}
+\end{equation}
+%
+%
+%------------------------------------------------------------------------
+\subsection{IEEE: Multi-line  Equations}
+%------------------------------------------------------------------------
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large eqnarray} Environment}
+%------------------------------------------------------------------------
+To restore IEEEtran's ability to automatically break within multiline equations, load \texttt{amsmath} in preamble like:
+%
+\begin{verbatim}
+\usepackage{amsmath}
+\interdisplaylinepenalty=2500
+\end{verbatim}
+%
+%
+\raggedright{\uwave {\bfseries{Example 1:}}}
+%
+%
+\begin{verbatim}
+\setlength{\arraycolsep}{0.0em}
+\begin{eqnarray}
+Z&{}={}&x_1 + x_2 + x_3 + x_4 + x_5 + x_6\nonumber\\
+ &     &+a +b\\
+ &     &+C +d +e  \nonumber\\
+ &  =  &+f +g +h +m +n
+\end{eqnarray}
+\setlength{\arraycolsep}{5pt}
+\end{verbatim}
+%
+%
+gives:
+%
+%
+\setlength{\arraycolsep}{0.0em}
+\begin{eqnarray}
+Z&{}={}&x_1 + x_2 + x_3 + x_4 + x_5 + x_6\nonumber\\
+&     &+a +b\\
+&     &+C +d +e  \nonumber\\
+&  =  &+f +g +h +m +n
+\end{eqnarray}
+\setlength{\arraycolsep}{5pt}
+%
+%
+\raggedright{\uwave {\bfseries{Example 2:}}}\\
+%
+This example is from ``IEEEtran\_HOWTO.pdf''
+%
+%
+\begin{verbatim}
+\setlength{\arraycolsep}{0.0em}
+\begin{eqnarray}
+Z&{}={}&x_1 + x_2 + x_3 + x_4 + x_5 + x_6\nonumber\\
+&&+a + b\\
+&&+{}a + b\\
+&&{}+a + b\\
+&&{+}\:a + b
+\end{eqnarray}
+\setlength{\arraycolsep}{5pt}
+\end{verbatim}
+%
+%
+Results in
+\setlength{\arraycolsep}{0.0em}
+\begin{eqnarray}
+Z&{}={}&x_1 + x_2 + x_3 + x_4 + x_5 + x_6\nonumber\\
+&&+a + b\\
+&&+{}a + b\\
+&&{}+a + b\\
+&&{+}\:a + b
+\end{eqnarray}
+\setlength{\arraycolsep}{5pt}
+%
+%
+Perhaps ``eqnarray environment'' is the most convenient and popular way to produce multiline equations. However, \texttt{eqnarray} has several serious shortcomings (see IEEEtran\_HOWTO.pdf).
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large flalign} for Putting Text in the Equation}
+%------------------------------------------------------------------------
+\verb|flalign| environment is used to put a text in the same line with equation and flushing it to left as shown below.
+%
+\\ Note: This can be useful to save some space in conference paper but in journals they do not generally use this.
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 1:}}}\\
+%------------------------------------------------------------------------
+\begin{flalign} 
+	&\text{It is}& PF(\alpha) &= A+B  &     \label{h-1a} \\
+	&\text{Where}& UC(\alpha) &= x    &     \nonumber    \\
+	&            &            &= W    &     \label{h-1b}
+\end{flalign}
+%
+by
+%
+\begin{verbatim}
+\begin{flalign} 
+&\text{It is}& PF(\alpha) &= A+B  &     \label{h-2a} \\
+&\text{where}& UC(\alpha) &= x    &     \nonumber    \\
+&            &            &= W    &     \label{h-2b}
+\end{flalign}
+\end{verbatim}
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+\begin{flalign} 
+	&\text{L.H.S:}& PF(\alpha) &= A+B  &     \label{h-3a} \\
+	&\text{R.H.S:}& UC(\alpha) &= x    &     \nonumber    \\
+	&&                         &= W    &     \label{h-3b}
+\end{flalign}
+%
+by
+%
+\begin{verbatim}
+\begin{flalign} 
+&\text{L.H.S:}& PF(\alpha) &= A+B  &     \label{h-2a} \\
+&\text{R.H.S:}& UC(\alpha) &= x    &     \nonumber    \\
+&&                         &= W    &     \label{h-2b}
+\end{flalign}
+\end{verbatim}
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large align} Environment}
+%------------------------------------------------------------------------
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 1:}}}\\
+%------------------------------------------------------------------------
+\begin{verbatim}
+\begin{align} 
+A\:&=\:B  \label{L1-a}\\
+C\:&=\:D  \label{L1-b}
+\end{align} 
+\end{verbatim}
+%
+%
+\begin{align} 
+A\:&=\:B  \label{L1-a}\\
+C\:&=\:D  \label{L1-b}
+\end{align}
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{align} \label{eq:x1}
+A\:=\:1 && 
+B\:=\:2 && 
+C\:=\:3 && 
+D\:=\:4 &&
+D\:=\:5
+\end{align}
+\end{verbatim}
+%
+\begin{align} \label{eq:x1}
+A\:=\:1 && 
+B\:=\:2 && 
+C\:=\:3 && 
+D\:=\:4 &&
+D\:=\:5
+\end{align}
+%
+\begin{verbatim}
+\begin{align}    
+A\:+\:B &\:=\:C  \nonumber\\ 
+&\:=\:D          \label{L1}
+\end{align}
+\end{verbatim}
+%
+%
+\begin{align}   
+A\:+\:B &\:=\:C  \nonumber\\ 
+&\:=\:D          \label{L1}
+\end{align}
+%
+%
+Equivalently this can be done as:
+%
+\begin{verbatim}
+\begin{align}    \label{L1} 
+A\:+\:B &\:=\:C  \nonumber\\ 
+&\:=\:D          
+\end{align}
+\end{verbatim}
+%
+%
+\begin{align}    \label{L1} 
+A\:+\:B &\:=\:C  \nonumber\\ 
+&\:=\:D          
+\end{align}
+%
+%
+
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 3:}}}\\
+%------------------------------------------------------------------------
+\begin{verbatim}
+\begin{align}
+x   &=y    & X  &=Y    & a &=b+c\\
+x   &=y    & X  &=Y    & a &=b\\
+x+x &=y+y  & X+X&=Y+Y  & ab&=cb
+\end{align}
+\end{verbatim}
+%
+%
+\begin{align}
+	x   &=y    & X  &=Y    & a &=b+c\\
+	x   &=y    & X  &=Y    & a &=b\\
+	x+x &=y+y  & X+X&=Y+Y  & ab&=cb
+\end{align}
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large alignat}~Environment}
+%------------------------------------------------------------------------
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 1:}}}\\
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{alignat}{2}\label{t7}
+\tilde{C}\, &= \,Q^TCQ, \quad \qquad    &\tilde{G}\, &= \,Q^TGQ, \nonumber\\ 
+\tilde{B}\, &= \,Q^TB,   \;\text{and}    &\tilde{L}\,&= \,LQ\,. 
+\end{alignat}
+\end{verbatim}
+%
+%
+\begin{alignat}{2}\label{t7}
+\tilde{C}\, &= \,Q^TCQ, \quad \qquad    &\tilde{G}\, &= \,Q^TGQ, \nonumber\\ 
+\tilde{B}\, &= \,Q^TB,   \;\text{and}    &\tilde{L}\,&= \,LQ\,. 
+\end{alignat}
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{alignat}{3}\label{eq:t11}
+	\mathat{C}\, &\trieq\,\mat{V}\T\mat{C}\mat{V}\: \in \mathbb{R}^{m\times m} 
+	\quad \quad    
+	&\mathat{B}\, &\trieq\,\mat{V}\T\mat{B} \in  \mathbb{R}^{m\times n_{in}} 
+	\nonumber\\ 
+	\mathat{G}\,&\trieq\,\mat{V}\T\mat{G}\mat{V}\: \in \mathbb{R}^{m\times m} 
+	&\mathat{L}\, &\trieq\,\mat{L}\mat{V}\;\;   \in \mathbb{R}^{n_{out}\times m}
+\end{alignat}
+\end{verbatim}
+%
+%
+\begin{alignat}{3}\label{eq:t11}
+	\mathat{C}\, &\trieq\,\mat{V}\T\mat{C}\mat{V}\: \in \mathbb{R}^{m\times m} 
+	\quad \quad    
+	&\mathat{B}\, &\trieq\,\mat{V}\T\mat{B} \in  \mathbb{R}^{m\times n_{in}}    \nonumber\\ 
+	\mathat{G}\,&\trieq\,\mat{V}\T\mat{G}\mat{V}\: \in \mathbb{R}^{m\times m} 
+	&\mathat{L}\, &\trieq\,\mat{L}\mat{V}\;\;   \in \mathbb{R}^{n_{out}\times m}
+\end{alignat}
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large aligned}~Environment}
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{equation}
+\left.\begin{aligned}
+B'&=-\partial \times E,\\
+E'&=\partial \times B - 4\pi j,
+\end{aligned}
+\right\}
+\qquad \text{Maxwell's equations}
+\end{equation}
+\end{verbatim}
+%
+%
+\begin{equation}
+	\left.\begin{aligned}
+		B'&=-\partial \times E,\\
+		E'&=\partial \times B - 4\pi j,
+	\end{aligned}
+	\right\}
+	\qquad \text{Maxwell's equations}
+\end{equation}
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large subequations} Environment}
+%------------------------------------------------------------------------
+This is working \texttt{IEEEtran.sty} very well!
+%
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+Using \texttt{subequations} \& \texttt{\textbf{equation}} environments together:
+%
+\begin{verbatim}
+\begin{subequations}
+\begin{equation}
+\rho(r)=\frac{\sigma^2}{2\pi G r_c^2}
+\frac{1}{1+\left(\frac{r}{r_c}\right)^2}
+\label{t9}
+\end{equation}
+\begin{equation}
+M_{PID}(R) = \frac{\sigma^2}{G}
+2\left[ R - r_c \arctan\left(\frac{R}{r_c}\right)\right]
+\label{t10}
+\end{equation}
+\end{subequations}
+\end{verbatim}
+%
+%
+\begin{subequations}
+	\begin{equation}
+	\rho(r)=\frac{\sigma^2}{2\pi G r_c^2}
+	\frac{1}{1+\left(\frac{r}{r_c}\right)^2}
+	\label{t11}
+	\end{equation}
+	\begin{equation}
+	M_{PID}(R) = \frac{\sigma^2}{G}
+	2\left[ R - r_c \arctan\left(\frac{R}{r_c}\right)\right]
+	\label{t12}
+	\end{equation}
+\end{subequations}
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+Using \texttt{subequations} \& \textbf{\texttt{align}} environments together:
+%
+%
+\begin{verbatim}
+\begin{subequations} \label{eq:PEEC_form1}
+\begin{align}
+\brk{\mat{G}(\bs{\xi})\:+\: s \mat{C}(\bs{\xi})}\mat X(s,\xi) \:&=\:
+\mat{B}\mat{I}_p(s) \label{eq:PEEC_form1_a}\\
+\mat{V}_p(s,\bs{\xi})\:&=\:
+\mat{L}\mat{X}(s,\:\bs{\xi}) \label{eq:PEEC_form1_b}
+\end{align}
+\end{subequations}
+\end{verbatim}
+%
+%
+\begin{subequations} \label{eq:PEEC_form1}
+	\begin{align}
+		\brk{\mat{G}(\bs{\xi})\:+\: s \mat{C}(\bs{\xi})}\mat X(s,\xi)\: &= \: \mat{B}\mat{I}_p(s) \label{eq:PEEC_form1_a}\\
+		\mat{V}_p(s,\bs{\xi})\:&=\:\mat{L}\mat{X}(s,\:\bs{\xi}) \label{eq:PEEC_form1_b}
+	\end{align}
+\end{subequations}
+%
+%
+%------------------------------------------------------------------------
+\raggedright{\uwave {\bfseries{Example 3:}}}\\
+%------------------------------------------------------------------------
+Using \texttt{subequations} environment with the \textbf{\texttt{align}} environment:
+%
+%
+\begin{verbatim}
+\begin{subequations} \label{eq:124}
+\begin{align}   
+s\mat{C}(s)\:&=\:-\mat{G}(s)\label{eq:124_a}\\
+\mat{I}\:&=\:\mat{B}        \label{eq:124_b}\\
+\mat{C}\:&=\:\mat{C}        \label{eq:124c}\\
+\mat{G}\:&=\:\mat{G}        \label{eq:124_d}
+\end{align}
+\end{subequations}
+\end{verbatim}
+%
+%
+\begin{subequations} \label{eq:124}
+	\begin{align}   
+		s\mat{C}(s)\:&=\:-\mat{G}(s)\label{eq:124_a}\\
+		\mat{I}\:&=\:\mat{B}        \label{eq:124_b}\\
+		\mat{C}\:&=\:\mat{C}        \label{eq:124_c}\\
+		\mat{G}\:&=\:\mat{G}        \label{eq:124_d}
+	\end{align}
+\end{subequations}
+%
+All the equations are referred to as \verb!\eqref{eq:124}! \eqref{eq:124} and then each one separately as \verb!\eqref{eq:124_a}! \eqref{eq:124_a} ,...,\verb!\eqref{eq:124_d}! \eqref{eq:124_d}.
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 4:}}}\\
+%------------------------------------------------------------------------
+Using \texttt{subequations} environment with the \textbf{\texttt{align}} environment:
+%
+\begin{subequations} \label{eq:red_gad1}
+	\begin{align}
+		s\mathat{C}(s) \mathat{X}(s)\:+\:\mathat{G}\mathat{X}(s)\:&=\:\mathat{B}\mat{U}(s) \label{eq:red_gad1_a}\\
+		\mat{I}_p(s)\:&=\:\mathat{B}\T\mathat{X}(s) \label{eq:red_gad1_b}
+	\end{align}
+	\text{where}	
+	\begin{align}
+		\mathat{G}&\trieq\mat{Q}\T\mat{G}\mat{Q}&
+		\mathat{C}&\trieq\mat{Q}\T\mat{C}\mat{Q}&
+		\mathat{B}&\trieq\mat{Q}\T\mat{B}&
+	\end{align}
+\end{subequations}
+%
+%
+\begin{verbatim}
+\begin{subequations} \label{eq:red_gad1}
+\begin{align}
+s\mathat{C}(s) \mathat{X}(s)\:+\:\mathat{G}\mathat{X}(s)\:&=
+\:\mathat{B}\mat{U}(s) \label{eq:red_gad1_a}\\
+\mat{I}_p(s)\:&=\:\mathat{B}\T\mathat{X}(s) \label{eq:red_gad1_b}
+\end{align}
+\text{where}	
+\begin{align}
+\mathat{G}&\trieq\mat{Q}\T\mat{G}\mat{Q}&
+\mathat{C}&\trieq\mat{Q}\T\mat{C}\mat{Q}&
+\mathat{B}&\trieq\mat{Q}\T\mat{B}&
+\end{align}
+\end{subequations}
+\end{verbatim}
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large case} structure: for multi-line equations}
+%------------------------------------------------------------------------
+This (\texttt{case} structure does not accept \texttt{\label{}})
+%
+%
+\begin{verbatim}
+\begin{equation*}
+\left|x\right|= 
+\begin{cases} 
+XX & \text{if} X=0,     \\
+YY & \text{if} YY\le 0  
+\end{cases}
+\end{verbatim}
+%
+%
+\begin{equation*}
+\left|x\right|= 
+\begin{cases} 
+XX & \text{if} X=0,     \\
+YY & \text{if} YY\le 0  
+\end{cases}
+\end{equation*}
+%
+%
+%------------------------------------------------------------------------
+\subsubsection{\texttt{\Large subnumcases} Environment}
+%------------------------------------------------------------------------
+%
+With a name at behind of the curly bracket, here, e.g., it is $\Psi$:
+%
+\begin{verbatim}
+\begin{subnumcases}{\label{t3} \Psi\,:\;}
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t3_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t3_b}
+\end{subnumcases}
+\end{verbatim}
+%
+%
+\begin{subnumcases}{\label{t4} \Psi\,:\;}
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t4_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t4_b}
+\end{subnumcases}
+%
+%
+\vskip 8pt
+And if without a name at behind of the curly bracket is intended:
+%
+\begin{verbatim}
+\begin{subnumcases}{\label{t3} {}} %This {} should be used!
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t3_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t3_b}
+\end{subnumcases}
+\end{verbatim}
+%
+%
+\begin{subnumcases}{\label{t40} {}}
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t40_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t40_b}
+\end{subnumcases}
+%
+%
+Note that in \texttt{subnumcases} environment the numbers for equations includes letters 'a' and 'b', hence the name, 'subnum'; e.g. (1a) and (1b).  
+%
+%
+%------------------------------------------------------------------------
+\subsection{\texttt{\Large numcases} Environment}
+%------------------------------------------------------------------------
+%
+Unlike \texttt{subnumcases} the numbers for equations does not include; e.g. it is (1) and (2).
+%
+%
+\begin{verbatim}
+\begin{numcases}{\label{t101} {\Sigma:}}
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t101_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t101_b}
+\end{numcases}
+\end{verbatim}
+%
+%
+\begin{numcases}{\label{t102} {\Sigma:}}
+C\frac{d}{{dt}}x(t)\; + \;Gx(t)\; = \;B\mathbf{u}(t)  \label{t102_a}\\
+\mathbf{i}(t)\; = \;\mathbf{L}x(t)\,,  \label{t102_b}
+\end{numcases}
+%
+%
+
+%------------------------------------------------------------------------
+\subsection{\texttt{\Large gather}: Equation groups without alignment}
+%------------------------------------------------------------------------
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 1:}}}\\
+%------------------------------------------------------------------------
+%
+\begin{gather} \label{t16}
+	H_c = \\
+	\begin{split}
+		&= a^2\\
+		&= b^c\\
+	\end{split}
+	\\
+	= H_d
+\end{gather}
+%
+by
+%
+\begin{verbatim}
+\begin{gather} \label{t15}
+H_c = \\
+\begin{split}
+&= a^2\\
+&= b^c\\
+\end{split} \\
+= H_d
+\end{gather}
+%
+\end{verbatim}
+%
+%
+%\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+%
+%
+\begin{gather*}
+	a_0=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\,\mathrm{d}x\\[6pt]
+	\begin{split}
+		a_n=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\cos nx\,\mathrm{d}x=\\
+		=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}x^2\cos nx\,\mathrm{d}x
+	\end{split}\\[6pt]
+	\begin{split}
+		b_n=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x=\\
+		=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}x^2\sin nx\,\mathrm{d}x
+	\end{split}\\[6pt]
+\end{gather*}
+%
+by
+%
+\begin{verbatim}
+\begin{gather*}
+a_0=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\,\mathrm{d}x\\[6pt]
+	\begin{split}
+	a_n=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\cos nx\,\mathrm{d}x=\\
+	=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}x^2\cos nx\,\mathrm{d}x
+	\end{split}\\[6pt]
+	\begin{split}
+	b_n=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x=\\
+	=\frac{1}{\pi}\int\limits_{-\pi}^{\pi}x^2\sin nx\,\mathrm{d}x
+	\end{split}\\[6pt]
+\end{gather*}
+\end{verbatim}
+%
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 3:}}}\\
+%------------------------------------------------------------------------
+%
+%
+\begin{gather}
+	A = \{\, x \mid x \in X_{i}, \text{ for some } i \in I \,\}          \nonumber\\
+	A = \{\, x \mid \text{for $x$ large} \,\}                            \nonumber\\
+	a_{\text{left}} + 2 = a_{\text{right}}                               \nonumber\\
+	\sum_{i = 1}^{ \left[ \frac{n}{2} \right] }
+	\binom{ x_{i, i + 1}^{i^{2}} }
+	{ \left[ \frac{i + 3}{3} \right] }
+	\frac{ \sqrt{ \mu(i)^{ \frac{3}{2}} (i^{2} - 1) } }
+	{\sqrt[3]{\rho(i)-2} + \sqrt[3]{\rho(i) - 1}}                       \nonumber\\   
+	\left[ \sum_i a_i \right]^{1/p} \quad
+	\mm{\sum_i a_i}^{1/p}                                    \nonumber\\         
+\end{gather}
+%
+by
+%
+\begin{verbatim}
+\begin{gather}
+A = \{\, x \mid x \in X_{i}, \text{ for some } i \in I \,\}          \nonumber\\
+A = \{\, x \mid \text{for $x$ large} \,\}                            \nonumber\\
+a_{\text{left}} + 2 = a_{\text{right}}                               \nonumber\\
+\sum_{i = 1}^{ \left[ \frac{n}{2} \right] }
+\binom{ x_{i, i + 1}^{i^{2}} }
+{ \left[ \frac{i + 3}{3} \right] }
+\frac{ \sqrt{ \mu(i)^{ \frac{3}{2}} (i^{2} - 1) } }
+{\sqrt[3]{\rho(i)-2} + \sqrt[3]{\rho(i) - 1}}                       \nonumber\\   
+\left[ \sum_i a_i \right]^{1/p} \quad
+\mm{\sum_i a_i}^{1/p}                                      \nonumber\\         
+\end{gather}
+\end{verbatim}
+%
+%
+%==========================================================================
+\begin{center}\deco{10pt}{44444444444}\end{center}
+%==========================================================================
+

@@ -1,0 +1,281 @@
+%------------------------------------------------------------------------
+\section{More Math}
+%------------------------------------------------------------------------
+%
+%
+%------------------------------------------------------------------------
+\subsection{Circuit placed side-by-side with equations}
+%------------------------------------------------------------------------
+%
+\begin{verbatim}
+\begin{figure}[!ht]
+	\begin{minipage}[b]{0.7\linewidth} %{\textwidth}
+		\centering
+		\includegraphics[trim=0in 0in 0in 0in, scale=0.8]{Figs/F1}  
+		\end{minipage}
+	\begin{minipage}[b]{0.2\linewidth}
+		\begin{flushleft}
+			\begin{tabular}{ll}
+			R\textsubscript{1}~=~\SI{1}{\kilo\ohm},    & 
+			R\textsubscript{2}~=~\SI{2}{\kilo\ohm},    \\[8pt]
+			C\textsubscript{1}~=~\SI{2}{\nano\farad},  & 
+			C\textsubscript{2}~=~\SI{1}{\nano\farad},  \\[8pt]
+			A~=~1000. &	
+			\end{tabular}
+		\end{flushleft}
+		\vspace*{24pt}
+	\end{minipage}
+\caption{Op-Amp Circuit}
+\label{sensitivity-F1-F1}
+\end{figure}
+\end{verbatim}
+%
+%
+\begin{figure}[!ht]
+	\begin{minipage}[b]{0.7\linewidth}
+		\centering
+		\includegraphics[trim=0in 0in 0in 0in, scale=0.8]{Figs/F1} 
+	\end{minipage}
+	\begin{minipage}[b]{0.2\linewidth}
+		\begin{flushleft}
+			\begin{tabular}{ll}
+				R\textsubscript{1}~=~\SI{1}{\kilo\ohm},    & 
+				R\textsubscript{2}~=~\SI{2}{\kilo\ohm},    \\[8pt]
+				C\textsubscript{1}~=~\SI{2}{\nano\farad},  & C\textsubscript{2}~=~\SI{1}{\nano\farad},  \\[8pt]
+				A~=~1000. &	
+			\end{tabular}
+		\end{flushleft}
+		\vspace*{24pt}
+	\end{minipage}
+	\caption{Op-Amp Circuit}
+	\label{sensitivity-F1-F1}
+\end{figure}
+%
+%
+%
+\newpage
+%------------------------------------------------------------------------
+\subsection{SYMBOLS: Special/Mathematical}
+%------------------------------------------------------------------------
+%
+\begin{enumerate}
+\item 
+$x\triangleq B \trieq  C \btrieq D \defeq E$:~~~~~~
+\verb! x\triangleq B \trieq  C\btrieq D \defeq E!\par
+%
+\item
+$\mathbf{G}(\bs{\xi})$:~~~~~~\verb!\mathbf{G}(\bs{\xi})!\par
+%
+\item
+$\mathbf{\tilde{L}} \:\triangleq\: \left[ 
+\begin{array}{*{20}{c}}  1 &  \ldots  & 1  \end{array}
+\right]_{1 \times K} \otimes \mathbf{L} $
+%
+\begin{verbatim}
+\mathbf{\tilde{L}} \:\triangleq\: \left[ 
+\begin{array}{*{20}{c}}  1 &  \ldots  & 1  \end{array}
+\right]_{1 \times K} \otimes \mathbf{L} 
+\end{verbatim}
+\end{enumerate}
+%
+%------------------------------------------------------------------------
+\subsection{Boxed equations}
+%------------------------------------------------------------------------
+\begin{multline}
+\framebox[.65\columnwidth]{A}\\
+\framebox[.5\columnwidth]{B}\\
+\shoveright{\framebox[.55\columnwidth]{C}}\\
+\framebox[.65\columnwidth]{D}
+\end{multline}
+%
+\begin{verbatim}
+\framebox[.65\columnwidth]{A}\\
+\framebox[.5\columnwidth]{B}\\
+\shoveright{\framebox[.55\columnwidth]{C}}\\
+\framebox[.65\columnwidth]{D}
+\end{verbatim}
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+\begin{equation}
+\boxed{ \int_{-\infty}^{\infty} e^{-x^{2}}\,dx\:=\:\sqrt{\pi}}
+\end{equation}
+%
+\begin{verbatim}
+\begin{equation} 
+\boxed{ \int_{-\infty}^{\infty} e^{-x^{2}}\,dx\:=\:\sqrt{\pi}}
+\end{equation}
+\end{verbatim}
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+%
+%------------------------------------------------------------------------
+\subsection{Some fancy things in array mode e.g. a big zero}
+%------------------------------------------------------------------------
+\newcommand{\BigFig}[1]{\parbox{12pt}{\Huge #1}}
+\newcommand{\BigZero}{\BigFig{0}}
+%
+First, the followings definition is needed.
+%
+\begin{verbatim}
+\newcommand{\BigFig}[1]{\parbox{12pt}{\Huge #1}}
+\newcommand{\BigZero}{\BigFig{0}}
+\end{verbatim}
+%
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+$ \left(\begin{matrix}
+(a_{11})\\
+\cdots & \BigZero \\
+(a_{n1})\\
+\end{matrix}\right) $\par
+%
+\begin{verbatim}
+\left(\begin{matrix}
+(a_{11})\\
+\cdots & \BigZero \\
+(a_{n1})\\
+\end{matrix}\right)
+\end{verbatim}
+%
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+$ \left(\begin{matrix}
+0\ldots 0 & 1 & 0\ldots 0\\
+& 0\\
+\BigZero & \cdots & \BigZero\\
+& 0\\
+\end{matrix} \right) $
+%
+%
+\begin{verbatim}
+\left(\begin{matrix}
+0\ldots 0 & 1 & 0\ldots 0\\
+& 0\\
+\BigZero & \cdots & \BigZero\\
+& 0\\
+\end{matrix} \right)
+\end{verbatim}
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+$\left[ \hspace{-\arraycolsep}
+% spacing is automatic with matrix but not with array
+\begin{array}{cccc}
+a & b &\multicolumn{2}{c}{}\\
+c & d &\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}& m & n \\
+\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}& k & l
+\end{array}
+\hspace{-\arraycolsep} \right] $
+%
+%
+\begin{verbatim}
+\left[ \hspace{-\arraycolsep}
+% spacing is automatic with matrix but not with array
+\begin{array}{cccc}
+a & b &\multicolumn{2}{c}{}\\
+c & d &\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}& m & n \\
+\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}& k & l
+\end{array}
+\hspace{-\arraycolsep} \right]
+\end{verbatim}
+%
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+$\left[ \hspace{-\arraycolsep}
+\begin{array}{cccc}
+1 \\
+  & 0 &\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}& \ddots  \\
+\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}} & & 0
+\end{array}
+\hspace{-\arraycolsep} \right]$
+%
+%
+\begin{verbatim}
+\left[ \hspace{-\arraycolsep}
+\begin{array}{cccc}
+1 \\
+  & 0 &\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}& \ddots  \\
+\multicolumn{2}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}} & & 0
+\end{array}
+\hspace{-\arraycolsep} \right]
+\end{verbatim}
+%
+%
+%-----------------------------------------------
+\begin{center}{\rule{10cm}{0.5pt}}\end{center}
+%-----------------------------------------------
+%
+$\left[ \hspace{-\arraycolsep}
+\begin{array}{ccccc}
+1 & \multicolumn{4}{c}{}\\
+  & \ddots&\multicolumn{3}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}&0\\
+\multicolumn{2}{c}{
+\raisebox{-0.5ex}[0pt]{\BigZero}} & & \ddots    \\
+\multicolumn{4}{c}{}  & 0
+\end{array}
+\hspace{-\arraycolsep} \right]$
+%
+%
+\begin{verbatim}
+\left[ \hspace{-\arraycolsep}
+\begin{array}{ccccc}
+1 & \multicolumn{4}{c}{}\\
+  & \ddots&\multicolumn{3}{c}
+{\raisebox{1.5ex}[0pt]{\BigZero}}\\
+\multicolumn{2}{c}{}&0\\
+\multicolumn{2}{c}{
+\raisebox{-0.5ex}[0pt]{\BigZero}} & & \ddots    \\
+\multicolumn{4}{c}{}  & 0
+\end{array}
+\hspace{-\arraycolsep} \right]
+\end{verbatim}
+%
+%
+%------------------------------------------------------------------------
+\subsection{\texttt{\large \textbackslash substack} for Multiline subscripts superscripts}
+%------------------------------------------------------------------------
+%
+Two (level of) subscripts on top of each other in math mode:
+%
+$$\sum\limits^K_{\substack{j=1\\i\neq j}}{A_{ii}^{-1}}$$
+\verb!\sum\limits^K_{\substack{j=1\\i\neq j}}{A_{ii}^{-1}}!
+%
+$$\sum\limits_{\substack{1\le i,\,j\le J\\ k\ne K}}\|x\|$$ 
+\begin{center}\verb!\sum\limits_{\substack{1\le i,\,j\le J\\ k\ne K}}\|x\|!\end{center}
+%
+%
+%
+%==========================================================================
+\begin{center}\deco{10pt}{44444444444}\end{center}
+%==========================================================================

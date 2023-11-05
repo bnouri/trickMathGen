@@ -1,0 +1,169 @@
+\section{Theorem Environment}
+\texttt{amsthm} provides:  Theorem environments, \verb@\begin{proof}@ and a  \verb@\qedhere@ which produces \emph{tombstones} for the ends of proofs.
+ 
+ The following code will further define theorem, lemma, proposition, corollary, proof, definition, example and remark environments, together with a control sequence \verb@\qed@ which produces `tombstones' for the ends of proofs!
+
+\subsection{Types of theorems and their formats}
+%
+%
+\textbf{\emph{Plain Types:}}\\
+\emph{Theorem, Lemma, Corollary, Proposition, Conjecture,Criterion, Algorithm}\\
+{$\bullet$~~}Makes theorem's body italic \\
+
+\vspace{12pt}
+\textbf{\emph{Definition Types:}}\\
+\emph{definition, Condition, Problem, Example}\\
+{$\bullet$~~}Makes theorem's body roman\\
+
+\vspace{12pt}
+\textbf{\emph{Remarks Types:}}\\
+\emph{Remark, Question, Claim, Note, Fact, Case, Notation, Summary, Acknowledgment, Conclusion}\\
+{$\bullet$~~}Makes theorem's body non-italic\\
+
+\subsection{Definitions}
+\begin{description}
+%%========================================================================
+%
+\item[Theorem:]{test} 
+\item[Lemma:]   
+\item[Corollary:]  
+\item[Proposition:]  
+\item[Conjecture:]
+\item[Criterion:]
+\item[Algorithm:]
+\item[Remark:]
+\item[Question:]
+\item[Claim:]
+\item[Note:]
+\item[Fact:]
+\item[Case:]
+\item[Notation:]
+\item[Summary:]
+\item[Acknowledgment:]
+\item[Conclusion:]
+%=============================================================================
+\end{description}
+%
+%
+%------------------------------------------------------------------------
+\subsection{\texttt{\Large proof} Environment}
+%------------------------------------------------------------------------
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 1:}}}\\
+%------------------------------------------------------------------------
+%
+\begin{proof}
+Here it is my proof	
+	\begin{equation}
+	a^2 + b^2 = c^2
+	\end{equation}
+\end{proof}
+%
+by
+%
+\begin{verbatim}
+\begin{proof}
+Here it is my proof	
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
+\end{proof}
+\end{verbatim}
+%
+%
+Please compare it with the following which is using \verb!\qedhere!.
+%
+\begin{proof}
+	Here is my proof
+	\begin{equation}
+		a^2 + b^2 = c^2 \qedhere
+	\end{equation}
+\end{proof}
+%
+by
+%
+\begin{verbatim}
+\begin{proof}
+Here is my proof
+\begin{equation}
+a^2 + b^2 = c^2 \qedhere
+\end{equation}
+\end{proof}
+\end{verbatim}
+%
+%
+Also, for the \ding{110} at the end of the proof, without starting a newline, we can use \verb!\QED! to obtain: \QED
+%
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 2:}}}\\
+%------------------------------------------------------------------------
+The method above does not work with the deprecated environment \texttt{eqnarray*}. Here is a workaround:
+%
+%
+\begin{proof}
+Here is my proof:
+\begin{eqnarray*}
+a^2 + b^2 = c^2
+\end{eqnarray*}
+\vspace{-1.3cm}\[\qedhere\]
+\end{proof}
+%
+%
+\begin{proof}
+proof goes here!
+\begin{equation}
+G(t)=L\gamma!\,t^{-\gamma}+t^{-\delta}\eta(t) %\qedhere
+\end{equation}
+\end{proof}
+%
+%
+%------------------------------------------------------------------------
+\par \raggedright{\uwave {\bfseries{Example 3:}}}\\
+%------------------------------------------------------------------------
+By using ``\verb@\SOL this is my solution.@'' we obtain a result as shown below.\\[6pt]
+\SOL this is my solution.\\
+
+%
+%===============================================================================
+%Theorems:
+%
+%
+\begin{theorem}
+Try this1
+\begin{equation}
+G(t)=L\gamma!\,t^{-\gamma}+t^{-\delta}\eta(t) \qedhere
+\end{equation}
+\end{theorem}
+%
+%
+\begin{question} \setcounter{equation}{0}
+Try this2
+\begin{equation}
+G(t)=L\gamma!\,t^{-\gamma}+t^{-\delta}\eta(t) \qedhere
+\end{equation}
+\end{question}
+%
+%
+\begin{question} \setcounter{equation}{0}
+Try this3
+\begin{equation}
+G(t)=L\gamma!\,t^{-\gamma}+t^{-\delta}\eta(t) \qedhere
+\end{equation}
+\end{question}
+%
+%
+\ques{1}{Here \verb@\ques{"your-num"}{}@ you have to enter the number of question}
+%
+%
+\QUES{Above \verb@\QUES{}@ numbers the question using a predefined counter!}\\
+\vspace{8pt}
+\QUES{See this one is numbered one more than above question}\\ 
+%
+%
+%
+%\noindent\hrulefill\\
+%==========================================================================
+\begin{center}\deco{10pt}{44444444444}\end{center}
+%==========================================================================

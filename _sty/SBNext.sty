@@ -1,0 +1,59 @@
+%---------------------------------------
+% Question-&-Solution:
+%---------------------------------------
+\newcommand{\DOT}{{\hspace{12pt}\Large\textbullet~}}
+
+\newcounter{Qnr} \setcounter{Qnr}{1} % Set the counter of the question numbers:
+\newcommand{\QUES}{\noindent \textbf{\large Question~\arabic{Qnr}:} \stepcounter{Qnr} \setcounter{equation}{0} \par \vspace{-10pt}}
+\newcommand{\ques}[1]{\setcounter{equation}{0}{\raggedright \textbf{\large Question~#1:}}}%\vspace{-10pt}}
+\newcommand{\SOL}{{\raggedright{\textbf{\textit{Solution:~}}}}\par}  
+
+%---------------------------------------
+% Proof-&-Answers:
+%---------------------------------------
+% Not required in presence of asma math package:
+\newcommand{\PROOF}{{\raggedright{\textbf{\textit{Proof:~~}}}}} 
+%Do NOT put \\ aftre entering \QUD and \FQED if want use "enter" to make a blank line!
+%\newcommand{\QED}{{\raggedleft \hfill $\blacksquare $\\}}
+%\newcommand{\QED}{\hspace*{\fill}~$\blacksquare$ \par} 
+\newcommand{\QED}{\hspace*{\fill}~\ding{110} \par} %equivalent to the one right above
+\newcommand{\FQED}{\hspace*{\fill}~\ding{118} \par} %equivalent to the one right above
+%\newcommand{\QED}{\hspace*{\fill}~\IEEEQED\par} %<== Just try Once, I do not think that it can work without including IEEEtran.cls though!!!
+
+
+%---------------------------------------
+% Colors:
+%---------------------------------------
+\newcommand{\SBN}[1]{\colorbox[rgb]{0.5,0.5,0.5}{\textcolor[rgb]{1,1,1}{#1}}} %red
+\newcommand{\SBNgrayI}[1]{\color[rgb]{0.75,0.75,0.75}{#1}}
+\newcommand{\SBNgrayII}[1]{\color[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\SBNgrayIII}[1]{\color[rgb]{0.25,0.25,0.25}{#1}}
+\newcommand{\SBNblueI}[1]{\color[rgb]{0,0,1}{#1}}
+
+%---------------------------------------
+% Colored Box:
+%---------------------------------------
+\newcommand{\BlueBox}[1]{\par\noindent \mbox{\colorbox[rgb]{0.6,0.8,1}{\begin{minipage}[!th]{\textwidth}{#1}\end{minipage}}}}
+\newcommand{\GrayBox}[1]{\noindent \mbox{\colorbox[rgb]{0.5,0.5,0.5}{\textcolor[rgb]{1,1,1}{\small #1}}}\\}
+
+%---------------------------------------
+% Some Extera
+%---------------------------------------
+\newcommand{\PutDate}{{\normalfont\bsifamily {Date:~~}\underline{~~\today~~}}}
+
+\newcommand{\itm }[1]{\noindent \textcolor[rgb]{0.3,0.3,0.3}{\textbullet}~~~#1\hfill \\} 
+\newcommand{\jtm}{\noindent{\color[rgb]{0.5,0.5,0.5}\underline{{\hspace{ 0.5cm}}}}~~~~~{\color[rgb]{0.5,0.5,0.5}\underline{{\hspace{16cm}}}}\par \vspace{8pt}}
+
+%---------------------------------------
+% Horizental Lines:
+%---------------------------------------
+\newcommand{\HL}{\vspace{3pt} \noindent\hrulefill \\ }
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
+\newcommand{\HRuleGray}{\textcolor[rgb]{0.4,0.4,0.4}{\rule{\linewidth}{0.75pt}}}
+\newcommand{\HRGray}{\noindent\textcolor[rgb]{0.7,0.7,0.7}{\centerline{\rule{\linewidth}{0.75pt}}}}
+%
+%
+\endinput   %<-LaTeX will ignore anything after this line.
+%-------------------------------------------------------------------------------
+% END of Extended Part of Short Hand
+%-------------------------------------------------------------------------------
